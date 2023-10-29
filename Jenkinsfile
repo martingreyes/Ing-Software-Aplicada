@@ -58,7 +58,7 @@ node {
             //sh "./mvnw -ntp -Pprod verify jib:build"
             withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
                 sh "./mvnw -ntp jib:build"
+            }
         }
-    
     }
 }
